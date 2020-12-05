@@ -22,7 +22,7 @@ To create a new questionare you need to follow the structure below:
 + Simple page with select question
     + Question
 
-
+          const QuestionConfig = [
               [
                 id: 1,
                 question: 'Question 1 group 2',
@@ -33,6 +33,8 @@ To create a new questionare you need to follow the structure below:
                   'All of the above',
                   'Other...',
               ],
+          ];
+
 
 
 + Dual page questions with check previous answer
@@ -104,6 +106,29 @@ To create a new questionare you need to follow the structure below:
               },
             ],
           ],
+
+
++ Create pesonal question page with simple input
+    + Question
+
+              const personalQuestionConfig = [
+                  {
+                    key: 'website',
+                    question: "What's your website?",
+                  },
+                  {
+                    key: 'name',
+                    question: 'whats your name?',
+                  },
+                  {
+                    key: 'email',
+                    question: "What's your email?",
+                  },
+                  {
+                    key: 'phoneNo',
+                    question: "What's your number?",
+                  },
+              ];
 
 
 
