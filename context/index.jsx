@@ -3,9 +3,9 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-export const CountContext = createContext();
+export const QuizContext = createContext();
 
-export default function CountProvider({ children }) {
+export default function QuizProvider({ children }) {
   const initialState = {
     currentStep: 0,
 
@@ -24,7 +24,7 @@ export default function CountProvider({ children }) {
   }, []);
 
   return (
-    <CountContext.Provider
+    <QuizContext.Provider
       value={{
         backHome,
         quiz,
@@ -34,15 +34,15 @@ export default function CountProvider({ children }) {
       }}
     >
       {children}
-    </CountContext.Provider>
+    </QuizContext.Provider>
   );
 }
 
 export function quizContext() {
-  const context = useContext(CountContext);
+  const context = useContext(QuizContext);
 
   if (!context) {
-    throw new Error('useContext must be used within a CountProvidere');
+    throw new Error('useContext must be used within a QuizProvider');
   }
 
   const {
@@ -60,10 +60,10 @@ export function quizContext() {
   };
 }
 
-CountProvider.propTypes = {
+QuizProvider.propTypes = {
   children: React.Component,
 };
 
-CountProvider.defaultProps = {
+QuizProvider.defaultProps = {
   children: PropTypes.string,
 };
